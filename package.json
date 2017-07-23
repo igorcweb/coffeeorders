@@ -1,19 +1,23 @@
 {
-  "name": "bookstore",
+  "name": "coffeshop",
   "version": "1.0.0",
-  "description": "RESTful API bookstore app",
+  "description": "AJAX with jQuery nodejs express mongodb",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Igor Chernyshev",
-  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "hjs": "0.0.6",
+    "hjs": "^0.0.6",
     "mongoose": "^4.10.8",
     "npm": "^5.3.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "author": "Igor Chernyshev",
+  "license": "ISC"
 }
-
