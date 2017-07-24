@@ -5,13 +5,16 @@ bodyParser = require('body-parser'),
 mongoose = require('mongoose');
 
 app.use(express.static(__dirname+'/client'));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 Order = require('./models/order');
 
 
 // Connect to Mongoose
-mongoose.connect('mongodb://localhost/coffeeorders');
+mongoose.connect('mongodb://localhost/coffeeorders', function(err) {
+	console.log(err);
+});
 var db = mongoose.connection;
 
 app.get('/', function(req, res) {
@@ -33,6 +36,7 @@ app.get('/api/orders', function(req, res) {
 
 app.post('/api/orders', function(req, res) {
 	var order = req.body;
+	console.log(order);
 	Order.addOrder(order, function(err, order) {
 		if(err){
             throw err;
