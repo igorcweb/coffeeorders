@@ -13,7 +13,7 @@ Order = require('./models/order');
 
 // Connect to Mongoose
 mongoose.connect('mongodb://localhost/coffeeorders', function(err) {
-	console.log(err);
+	if(err){console.log(err)};
 });
 var db = mongoose.connection;
 
