@@ -7,16 +7,14 @@ function addOrder(order) {
 }
 
 $.ajax({
-    type: 'GET', //default (not required)
-    url: '/api/orders',
-    success: function (orders) {
-        $.each(orders, function (i, order) {
-            addOrder(order);
-        });
-    },
-    error: function (error) {
-        throw error;
-    }
+  type: "GET", //default (not required)
+  url: "/api/orders"
+}).done(function(orders) {
+  $.each(orders, function(i, order) {
+    addOrder(order);
+  });
+}).fail(function(err) {
+    console.log(err);
 });
 
 $('#add-order').on('click', function () {

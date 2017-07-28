@@ -21,9 +21,9 @@ app.get('/', function(req, res) {
 	res.send('Please use /api/orders');
 });
 
-app.get('/javascripts/main.js', function(req, res) {
-	res.render('javascripts/main.js');
-});
+// app.get('/javascripts/main.js', function(req, res) {
+// 	res.render('javascripts/main.js');
+// });
 
 app.get('/api/orders', function(req, res) {
 	Order.getOrders(function(err, orders) {
